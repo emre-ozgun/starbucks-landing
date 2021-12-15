@@ -29,7 +29,7 @@ const SectionCards = () => {
 				</article>
 
 				<article className='section-img'>
-					<img src={sectionImage1} alt='starbucks-coffe-1' />
+					<img src={sectionImage1} alt='starbucks-coffee-1' />
 				</article>
 			</SectionWrapper>
 			<SectionWrapper reverseOrder={true} bcg='#D50032'>
@@ -48,7 +48,7 @@ const SectionCards = () => {
 				</article>
 
 				<article className='section-img'>
-					<img src={sectionImage2} alt='starbucks-coffe-1' />
+					<img src={sectionImage2} alt='starbucks-coffee-2' />
 				</article>
 			</SectionWrapper>
 			<SectionWrapper bcg='#D50032'>
