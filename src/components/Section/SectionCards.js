@@ -10,13 +10,11 @@ import { Button } from '../../styles/Button';
 const SectionCards = () => {
 	return (
 		<>
-			<SectionWrapper bcg='#D4E9E3' greenText={true}>
+			<SectionWrapper bcg='#D4E9E3' greenText={true} orderSmall={true}>
 				<article className='section-info'>
 					<div className='section-box'>
 						<h1 className='section-title'>
-							<strong>
-								starbucks for <br /> life
-							</strong>
+							<strong>starbucks for life</strong>
 						</h1>
 						<div className='section-description'>
 							It's the most festive game of the year, with chances to win free
@@ -35,10 +33,7 @@ const SectionCards = () => {
 			<SectionWrapper reverseOrder={true} bcg='#D50032'>
 				<article className='section-info'>
 					<div className='section-box'>
-						<h1 className='section-title'>
-							minty,
-							<br /> chocolaty joy
-						</h1>
+						<h1 className='section-title'>minty, chocolaty joy</h1>
 						<div className='section-description'>
 							Our handcrafted Peppermint Mocha is like a winter wonderland of
 							flavors.
@@ -51,7 +46,7 @@ const SectionCards = () => {
 					<img src={sectionImage2} alt='starbucks-coffee-2' />
 				</article>
 			</SectionWrapper>
-			<SectionWrapper bcg='#D50032'>
+			<SectionWrapper bcg='#D50032' orderSmall={true}>
 				<article className='section-info'>
 					<div className='section-box'>
 						<h1 className='section-title'>new to the nice list</h1>
@@ -70,12 +65,10 @@ const SectionCards = () => {
 			<SectionWrapper reverseOrder={true} bcg='#D50032'>
 				<article className='section-info'>
 					<div className='section-box'>
-						<h1 className='section-title'>
-							chill and be <br /> merry
-						</h1>
+						<h1 className='section-title'>chill and be merry</h1>
 						<div className='section-description'>
 							Our Irish Cream Cold Brew is dressed up for the holidays with
-							sweet cream cold foam and a strike of cocoa. Order now
+							sweet cream cold foam and a strike of cocoa.
 						</div>
 						<Button href='#'>Order now</Button>
 					</div>
@@ -85,7 +78,7 @@ const SectionCards = () => {
 					<img src={sectionImage4} alt='starbucks-coffe-1' />
 				</article>
 			</SectionWrapper>
-			<SectionWrapper bcg='#1D3932' smallTitle={true}>
+			<SectionWrapper bcg='#1D3932' smallTitle={true} orderSmall={true}>
 				<article className='section-info'>
 					<div className='section-box'>
 						<h1 className='section-title'>Ring in the cheer.</h1>
@@ -142,8 +135,16 @@ const SectionWrapper = styled.section`
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
-		padding: 2rem 3rem;
 		text-align: center;
+
+		.section-box {
+			padding: 2rem 3rem;
+		}
+
+		.section-box .section-description {
+			max-width: 85%;
+			margin: 0 auto;
+		}
 
 		h1 {
 			${({ smallTitle }) =>
@@ -165,7 +166,7 @@ const SectionWrapper = styled.section`
 		}
 
 		.section-description {
-			padding: 0 16px;
+			/* padding: 0 16px; */
 			line-height: 32px;
 			font-weight: 400;
 			font-size: 24px;
@@ -184,7 +185,11 @@ const SectionWrapper = styled.section`
 			border: 1px solid;
 			background-color: transparent;
 		}
+		strong {
+			font-weight: 800;
+		}
 	}
+
 	.section-img {
 		flex: 1;
 		display: flex;
@@ -194,6 +199,42 @@ const SectionWrapper = styled.section`
 
 	.section-img img {
 		width: 100%;
+		display: block;
+	}
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+
+		${({ orderSmall }) =>
+			orderSmall &&
+			css`
+				flex-direction: column-reverse;
+			`}
+	}
+
+	@media (max-width: 1024px) {
+		.section-info {
+			padding: 2rem 1rem;
+
+			h1 {
+				${({ smallTitle }) =>
+					smallTitle
+						? css`
+								font-size: 22px;
+								text-transform: 'capitalize';
+								font-weight: 600;
+								letter-spacing: 0;
+						  `
+						: css`
+								font-size: 28px;
+								text-transform: uppercase;
+								font-weight: 700;
+								letter-spacing: 5px;
+						  `};
+
+				margin-bottom: 20px;
+			}
+		}
 	}
 `;
 

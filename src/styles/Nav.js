@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const NavWrapper = styled.nav`
-	max-width: 1200px;
+	max-width: 1400px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: #fff;
-	padding: 0 1.2rem;
+	padding: 0 0.2rem;
 
 	ul {
 		display: flex;
