@@ -1,3 +1,6 @@
-# clone
-## npm install
-## npm start
+# Starbucks Landing Page
+
+
+### clone
+### npm install
+### npm start
