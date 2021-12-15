@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from 'react';
+import Header from './components/Header';
+// import SectionCards from './components/Section/SectionCards';
+
+const SectionComponent = lazy(() =>
+	import('./components/Section/SectionCards')
+);
+
+const renderLoader = () => <p>Loading</p>;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<Header />
+			<main>
+				<Suspense fallback={renderLoader()}>
+					<SectionComponent />
+				</Suspense>
+			</main>
+			<footer></footer>
+		</>
+	);
 }
 
 export default App;
