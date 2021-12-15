@@ -7,7 +7,7 @@ export const NavWrapper = styled.nav`
 	justify-content: space-between;
 	align-items: center;
 	background-color: #fff;
-	padding: 0 0.2rem;
+	padding: 0 1.2rem;
 
 	ul {
 		display: flex;
@@ -31,11 +31,11 @@ export const NavWrapper = styled.nav`
 	.nav-cta {
 		display: flex;
 		align-items: center;
-		justify-content: space-evenly;
+		justify-content: space-between;
 	}
 
 	.nav-cta a {
-		margin-left: -18px;
+		/* margin-left: 18px; */
 	}
 
 	.nav-links {
@@ -74,6 +74,6 @@ export const NavWrapper = styled.nav`
 		font-weight: 600;
 	}
 	.nav-cta > li {
-		margin-right: 1rem;
+		/* margin-left: 1rem; */
 	}
 `;
