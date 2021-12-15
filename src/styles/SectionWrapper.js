@@ -22,7 +22,7 @@ export const SectionWrapper = styled.section`
 		}
 
 		.section-box .section-description {
-			max-width: 85%;
+			max-width: 100%;
 			margin: 0 auto;
 		}
 
@@ -61,6 +61,7 @@ export const SectionWrapper = styled.section`
 			border-color: ${({ greenText }) => (greenText ? '#1E3932' : '#fff')};
 			margin-top: 20px;
 			font-weight: 600;
+			font-size: 1.1rem;
 			padding: 7px 16px;
 			border: 1px solid;
 			background-color: transparent;
