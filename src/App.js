@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import Header from './components/Header';
 import LegalSection from './components/LegalSection';
 import Divider from './components/Divider';
+import Footer from './components/Footer';
 // import SectionCards from './components/Section/SectionCards';
 
 const SectionComponent = lazy(() =>
@@ -22,7 +23,7 @@ function App() {
 			</main>
 			<Divider />
 
-			<footer></footer>
+			<Footer />
 		</>
 	);
 }
