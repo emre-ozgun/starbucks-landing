@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FiChevronDown } from 'react-icons/fi';
+import {
+	FaSpotify,
+	FaFacebookF,
+	FaPinterestP,
+	FaInstagram,
+	FaYoutube,
+	FaTwitter,
+} from 'react-icons/fa';
 
 const Footer = () => {
 	const toggleModal = (e) => {
@@ -106,7 +114,44 @@ const Footer = () => {
 				</FooterModal>
 
 				<FooterHr aria-hidden='true' />
-				<FooterIcons></FooterIcons>
+				<FooterIcons>
+					<li>
+						<a href='#'>
+							<FaSpotify />
+							<div className='grey-circle'></div>
+						</a>
+					</li>
+					<li>
+						<a href='#'>
+							<FaFacebookF />
+							<div className='grey-circle'></div>
+						</a>
+					</li>
+					<li>
+						<a href='#'>
+							<FaPinterestP />
+							<div className='grey-circle'></div>
+						</a>
+					</li>
+					<li>
+						<a href='#'>
+							<FaInstagram />
+							<div className='grey-circle'></div>
+						</a>
+					</li>
+					<li>
+						<a href='#'>
+							<FaYoutube />
+							<div className='grey-circle'></div>
+						</a>
+					</li>
+					<li>
+						<a href='#'>
+							<FaTwitter />
+							<div className='grey-circle'></div>
+						</a>
+					</li>
+				</FooterIcons>
 
 				<FooterLegal></FooterLegal>
 
@@ -284,7 +329,59 @@ const FooterHr = styled.hr`
 	}
 `;
 
-const FooterIcons = styled.ul``;
+const FooterIcons = styled.ul`
+	display: flex;
+
+	li {
+		background-color: #1e1e1e;
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 1.2rem;
+
+		a {
+			position: relative;
+
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			font-size: 1.25rem;
+			display: grid;
+			place-items: center;
+
+			.grey-circle {
+				position: absolute;
+
+				top: 50;
+				left: 50;
+				z-index: -1;
+				transform: translate(-50%, -50%);
+				background-color: #e9e9e9;
+				transform-origin: center;
+				transform: scale(0);
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+
+				transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+			}
+
+			&:hover {
+				.grey-circle {
+					transform: scale(1.2);
+				}
+			}
+		}
+
+		a > svg {
+			color: #fff;
+		}
+	}
+`;
 const FooterLegal = styled.ul``;
 
 const FooterCopyright = styled.p``;
