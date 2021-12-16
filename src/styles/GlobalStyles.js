@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
     max-width: 1400px;
     margin: 0 auto;
   }
+  
 `;
 
 export default GlobalStyles;
