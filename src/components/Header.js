@@ -7,7 +7,7 @@ const Header = () => {
 	return (
 		<header>
 			<NavWrapper>
-				<a className='logo'>
+				<a href='#' className='logo'>
 					<SiStarbucks className='logo-svg' />
 				</a>
 				<ul className='nav-links'>

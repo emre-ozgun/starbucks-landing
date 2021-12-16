@@ -1,10 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { FiChevronDown } from 'react-icons/fi';
 
 const Footer = () => {
-	const [isToggled, setIsToggled] = useState(false);
-
 	const toggleModal = (e) => {
 		console.log(e.currentTarget);
 		if (!e.currentTarget.nextElementSibling.classList.contains('active')) {
@@ -107,6 +105,7 @@ const Footer = () => {
 					</div>
 				</FooterModal>
 
+				<FooterHr aria-hidden='true' />
 				<FooterIcons></FooterIcons>
 
 				<FooterLegal></FooterLegal>
@@ -158,6 +157,7 @@ const FooterModal = styled.div`
 
 	& > div > div:first-of-type {
 		h3 {
+			margin-top: 8px;
 			font-size: 19px;
 			font-weight: 400;
 		}
@@ -178,12 +178,18 @@ const FooterModal = styled.div`
 	@media (max-width: 1024px) {
 		display: block;
 
+		.animation-wrapper > div {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+
 		& > div {
 			user-select: none;
 			max-width: 100%;
 			width: 100%;
-			padding: 12px 0;
-			margin: 0px 0px 16px;
+			padding: 8px 0;
+			margin: 0px 0px 0px;
 		}
 
 		& > div > div:first-of-type {
@@ -209,20 +215,20 @@ const FooterModal = styled.div`
 			max-height: 0px;
 			transform: translateY(-100%);
 
-			transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+			transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 
 			a {
 				padding: 8px 0;
 				font-size: 20px;
 				color: rgba(0, 0, 0, 0.58);
-				margin-bottom: 0.8rem;
+				/* margin-bottom: 0.8rem; */
 				font-weight: 500;
 				&:hover {
 					color: #2a2a2a;
 				}
 			}
 			a:first-of-type {
-				margin-top: 32px;
+				margin-top: 8px;
 			}
 		}
 
@@ -245,7 +251,7 @@ const FooterModal = styled.div`
 			margin-right: 4px;
 			transform: rotate(0deg);
 
-			transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+			transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 		}
 		.chevron.active {
 			transform: rotate(180deg);
@@ -254,7 +260,7 @@ const FooterModal = styled.div`
 	@media (max-width: 768px) {
 		& > div > div:first-of-type {
 			h3 {
-				font-size: 20px;
+				font-size: 19px;
 			}
 		}
 
@@ -263,6 +269,18 @@ const FooterModal = styled.div`
 				font-size: 16px;
 			}
 		}
+	}
+`;
+
+const FooterHr = styled.hr`
+	padding: 3.2rem 0;
+	border: 0;
+	margin: 0;
+
+	&::before {
+		content: '';
+		display: block;
+		border-top: 2px solid rgba(0, 0, 0, 0.1);
 	}
 `;
 
