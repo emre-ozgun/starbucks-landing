@@ -76,4 +76,10 @@ export const NavWrapper = styled.nav`
 	.nav-cta > li {
 		/* margin-left: 1rem; */
 	}
+
+	@media (max-width: 768px) {
+		& {
+			display: none;
+		}
+	}
 `;
