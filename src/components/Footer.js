@@ -153,9 +153,27 @@ const Footer = () => {
 					</li>
 				</FooterIcons>
 
-				<FooterLegal></FooterLegal>
+				<FooterLegal>
+					<li>
+						<a href='#'>Privacy Policy</a>
+					</li>
+					<li>
+						<span>|</span>
+						<a href='#'>Terms of Use</a>
+					</li>
+					<li>
+						<span>|</span>
+						<a href='#'>CA Supply Chain Act</a>
+					</li>
+					<li>
+						<span>|</span>
+						<a href='#'>Cookie Preferences</a>
+					</li>
+				</FooterLegal>
 
-				<FooterCopyright></FooterCopyright>
+				<FooterCopyright>
+					© 2021 Starbucks Coffee Company. All rights reserved.
+				</FooterCopyright>
 			</FooterContent>
 		</FooterWrapper>
 	);
@@ -318,7 +336,7 @@ const FooterModal = styled.div`
 `;
 
 const FooterHr = styled.hr`
-	padding: 3.2rem 0;
+	padding: 32px 0;
 	border: 0;
 	margin: 0;
 
@@ -382,8 +400,68 @@ const FooterIcons = styled.ul`
 		}
 	}
 `;
-const FooterLegal = styled.ul``;
+const FooterLegal = styled.ul`
+	margin-top: 1.6rem;
+	margin-bottom: 0.4rem;
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
 
-const FooterCopyright = styled.p``;
+	& > li > span {
+		display: none;
+	}
+
+	& > li > a {
+		display: block;
+		text-decoration: none;
+		padding-left: 0;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		margin: 0 0 4px;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	@media (min-width: 768px) {
+		& > li > a {
+			font-size: 17px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		flex-direction: row;
+
+		& > li > a {
+			display: inline-block;
+			font-size: 18px;
+			padding: 0 1rem;
+			padding-top: 0;
+			padding-bottom: 0;
+			/* margin-bottom: 0.4rem; */
+		}
+
+		& > li > a:first-child {
+			padding-left: 0;
+		}
+
+		& > li > span {
+			display: inline-block;
+			padding: 0 12.8px;
+		}
+	}
+`;
+
+const FooterCopyright = styled.p`
+	font-size: 13px;
+	font-weight: 400;
+	padding: 1rem 0;
+	color: #6b6b6b;
+	font-weight: 500;
+
+	@media (min-width: 768px) {
+		font-size: 14px;
+	}
+`;
 
 export default Footer;
