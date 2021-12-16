@@ -1,6 +1,8 @@
-# Starbucks Landing Page
+## Starbucks Landing Page
 
+Attempting Starbucks home page with ReactJS and Styled Components
 
-### clone
-### npm install
-### npm start
+1. Clone
+2. npm install
+3. npm start
+
