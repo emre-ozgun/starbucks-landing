@@ -14,10 +14,10 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     background-color: #fff;
     font-size: 14px;
-    overflow:hidden;
+    
   }
 
-  body.active {
+  body.hidden {
     overflow:hidden;
   }
 

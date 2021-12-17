@@ -6,7 +6,32 @@ import { NavWrapper } from '../styles/Nav';
 import { FaBars } from 'react-icons/fa';
 const Header = () => {
 	const toggleSidebar = (e) => {
-		console.log(e.target.parentElement.nextElementSibling);
+		const navBtn = e.currentTarget;
+		const overlay = e.currentTarget.parentElement.nextElementSibling;
+		const sidebar =
+			e.currentTarget.parentElement.nextElementSibling.nextElementSibling;
+
+		navBtn.classList.toggle('open');
+		overlay.classList.toggle('hidden');
+		sidebar.classList.toggle('hidden');
+
+		document.body.classList.toggle('hidden');
+
+		console.log(navBtn, overlay, sidebar);
+	};
+
+	const handleClickOutside = (e) => {
+		if (!e.target.classList.contains('hidden')) {
+			document.body.classList.remove('hidden');
+			e.currentTarget.classList.add('hidden');
+			e.currentTarget.nextElementSibling.classList.add('hidden');
+			e.currentTarget.previousElementSibling.lastElementChild.classList.remove(
+				'open'
+			);
+			// console.log(e.currentTarget.nextElementSibling);
+		} else {
+			return;
+		}
 	};
 
 	return (
@@ -56,8 +81,8 @@ const Header = () => {
 					<div className='circle'></div>
 				</NavMenu>
 			</MobileNavWrapper>
-			<Overlay className='active'></Overlay>
-			<Sidebar className='active'>
+			<Overlay className='active hidden' onClick={handleClickOutside}></Overlay>
+			<Sidebar className='active hidden'>
 				<a className='sidelink'>Menu</a>
 				<a className='sidelink'>Rewards</a>
 				<a className='sidelink'>Gift Cards</a>
@@ -109,8 +134,13 @@ const NavMenu = styled.button`
 	@media (max-width: 768px) {
 		&.active {
 			.bars {
-				transform: rotate(90deg);
+				transform: rotate(0);
 				transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+			}
+		}
+		&.open {
+			.bars {
+				transform: rotate(180deg);
 			}
 		}
 
@@ -209,30 +239,23 @@ const Sidebar = styled.div`
 		display: block;
 		transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 
-		& {
-			/* position: absolute; */
-			position: fixed;
-			/* visibility: hidden;
-			opacity: 0; */
-
-			transform: translateX(100vw);
-		}
-
 		&.active {
 			position: fixed;
-			/* visibility: visible;
-			opacity: 1; */
+
 			top: 72px;
 			height: calc(100% - 72px);
-			left: 20vw;
+
 			right: 0;
-			width: 80vw;
+			width: 80%;
 			background-color: #fff;
 			box-shadow: inset 0 4px 3px -3px rgb(0 0 0 / 10%),
 				inset 0 4px 2px -2px rgb(0 0 0 / 7%);
 			overflow: auto;
 			transform: translateX(0);
 			z-index: 2;
+		}
+		&.active.hidden {
+			transform: translateX(100%);
 		}
 	}
 `;
@@ -243,12 +266,6 @@ const Overlay = styled.div`
 
 	@media (max-width: 768px) {
 		display: block;
-
-		& {
-			opacity: 0;
-			visibility: hidden;
-			z-index: -999;
-		}
 
 		&.active {
 			position: fixed;
@@ -263,6 +280,11 @@ const Overlay = styled.div`
 			opacity: 0.38;
 			visibility: visible;
 			z-index: 1;
+		}
+		&.hidden {
+			opacity: 0;
+			visibility: hidden;
+			z-index: -999;
 		}
 	}
 `;

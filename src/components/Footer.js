@@ -364,8 +364,8 @@ const FooterIcons = styled.ul`
 		a {
 			position: relative;
 
-			width: 100%;
-			height: 100%;
+			width: 36px;
+			height: 36px;
 			border-radius: 50%;
 			font-size: 1.25rem;
 			display: grid;
@@ -397,6 +397,12 @@ const FooterIcons = styled.ul`
 
 		a > svg {
 			color: #fff;
+		}
+	}
+
+	@media (max-width: 400px) {
+		li {
+			margin-right: 0.6rem;
 		}
 	}
 `;
