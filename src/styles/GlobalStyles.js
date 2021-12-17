@@ -14,6 +14,18 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     background-color: #fff;
     font-size: 14px;
+    overflow:hidden;
+  }
+
+  body.active {
+    overflow:hidden;
+  }
+
+  @media (min-width: 768px) {
+    
+    body {
+      overflow: visible;
+    }
   }
 
 
