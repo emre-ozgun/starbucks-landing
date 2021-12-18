@@ -34,10 +34,6 @@ export const NavWrapper = styled.nav`
 		justify-content: space-between;
 	}
 
-	.nav-cta a {
-		/* margin-left: 18px; */
-	}
-
 	.nav-links {
 		margin-right: auto;
 		margin-left: 1rem;
@@ -72,9 +68,6 @@ export const NavWrapper = styled.nav`
 
 	.nav-cta {
 		font-weight: 600;
-	}
-	.nav-cta > li {
-		/* margin-left: 1rem; */
 	}
 
 	@media (max-width: 768px) {

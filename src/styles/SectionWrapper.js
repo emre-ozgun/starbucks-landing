@@ -46,7 +46,6 @@ export const SectionWrapper = styled.section`
 		}
 
 		.section-description {
-			/* padding: 0 16px; */
 			line-height: 32px;
 			font-weight: 400;
 			font-size: 24px;
