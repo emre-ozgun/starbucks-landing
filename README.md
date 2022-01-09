@@ -1,6 +1,6 @@
 ## Starbucks Landing Page
 
-Attempting to replicate Starbucks' landing page with ReactJS and Styled Components
+Attempting to replicate Starbucks landing page with ReactJS and Styled Components
 
 
 1. npm install
